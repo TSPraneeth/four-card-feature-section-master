@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+*
+{
+    margin: 0;
+    box-sizing: border-box;
+}
+body
+{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8375rem;
+    color: hsl(229, 6%, 66%);
+    background: hsl(0, 0%, 98%);
+}
+
+.grid_container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "head head head"
+        "card1 card2 card3"
+        ". card4 .";
+        position: absolute;
+        transform: translate(-50%,-50%);
+        left: 50%;
+        top: 50%;
+}
+
+.heading1, .heading2, .desc
+{
+    text-align: center;
+}
+
+.headings
+{
+    transform: translateY(35%);
+    grid-area: head;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.heading1
+{
+    font-weight: 400;
+}
+
+.heading1, .heading2, .head
+{
+    font-size: 1.25rem;
+}
+
+.heading2 ,.head
+{
+    color: hsl(234, 12%, 34%);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card1 ,.card2 ,.card3,.card4
+{
+    background: white;
+    margin: 10px;
+    width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+    height: 225px;
+    box-shadow: 0 5px 15px 0 hsla(212, 86%, 64%,0.2);
+}
+
+.card1
+{
+    grid-area: card1;
+    background-image: url(../images/icon-supervisor.svg);
+    background-position: 90% 90%;
+    background-repeat: no-repeat;
+    background-size: 60px;
+    transform: translateY(50%);
+    border-top: 4px solid  hsl(180, 62%, 55%);
+}
+
+.card2
+{
+    grid-area: card2;
+    background-image: url(../images/icon-team-builder.svg);
+    background-position: 90% 90%;
+    background-repeat: no-repeat;
+    background-size: 60px;
+    border-top: 4px solid  hsl(0, 78%, 62%);
+}
+
+.card3
+{
+    grid-area: card3;
+    background-image: url(../images/icon-karma.svg);
+    background-position: 90% 90%;
+    background-repeat: no-repeat;
+    background-size: 60px;
+    transform: translateY(50%);
+    border-top: 4px solid  hsl(34, 97%, 64%);
+}
+
+.card4
+{
+    grid-area: card4;
+    background-image: url(../images/icon-calculator.svg);
+    background-position: 90% 90%;
+    background-repeat: no-repeat;
+    background-size: 60px;
+    border-top: 4px solid  hsl(212, 86%, 64%);
+}
+
+@media screen and (min-width:768px) and (max-width:992px) {
+    .grid_container
+    {
+        position: unset;
+        transform: none;
+        margin: 50px;
+    }
+    
+}
+
+@media screen and (max-width:767px) {
+    .grid_container
+    {
+        width: 90%;
+        margin: 12px auto;
+        position: unset;
+        transform: none;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.7fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "head"
+            "card1"
+            "card2"
+            "card3"
+            "card4";
+    }
+
+    .card1,.card2,.card3,.card4
+    {
+        margin: 10px auto;
+        transform: none;
+    }
+
+    .headings
+    {
+        transform: none;
+    }
+    
+}
+
+@media screen and (max-width:425px) {
+    .headings
+    {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width:426px) and (max-width:768px) {
+    .headings
+    {
+       width: 75%;
+    }
+    
+}
